@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Archives | Ostrich&#39;s Blog</title>
+  <title>Ostrich&#39;s Blog</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello">
-<meta property="og:type" content="website">
+  <meta name="description" content="#使用树莓派制作一个流(qie)媒(ting)体服务器 [TOC] 材料准备硬件服务端1.树莓派Zero W 2.ResSpeaker 2-Mics Pi HR  客户端手机/平板/PC 软件服务端1.树莓派操作系统Raspbian 2.声卡ResSpeaker 2-Mics Pi HR的驱动 3.中间件nginx 4.nginx的rtmp模块nginx-rtmp-module 5.音视频采集器f">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Ostrich&#39;s Blog">
-<meta property="og:url" content="https://ostrichsec.github.io/archives/index.html">
+<meta property="og:url" content="https://ostrichsec.github.io/2019/08/21/树莓派搭建流媒体服务器/index.html">
 <meta property="og:site_name" content="Ostrich&#39;s Blog">
-<meta property="og:description" content="Hello">
+<meta property="og:description" content="#使用树莓派制作一个流(qie)媒(ting)体服务器 [TOC] 材料准备硬件服务端1.树莓派Zero W 2.ResSpeaker 2-Mics Pi HR  客户端手机/平板/PC 软件服务端1.树莓派操作系统Raspbian 2.声卡ResSpeaker 2-Mics Pi HR的驱动 3.中间件nginx 4.nginx的rtmp模块nginx-rtmp-module 5.音视频采集器f">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-21T14:58:13.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ostrich&#39;s Blog">
-<meta name="twitter:description" content="Hello">
+<meta name="twitter:description" content="#使用树莓派制作一个流(qie)媒(ting)体服务器 [TOC] 材料准备硬件服务端1.树莓派Zero W 2.ResSpeaker 2-Mics Pi HR  客户端手机/平板/PC 软件服务端1.树莓派操作系统Raspbian 2.声卡ResSpeaker 2-Mics Pi HR的驱动 3.中间件nginx 4.nginx的rtmp模块nginx-rtmp-module 5.音视频采集器f">
   
     <link rel="alternative" href="/atom.xml" title="Ostrich&#39;s Blog" type="application/atom+xml">
   
@@ -196,75 +197,72 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-树莓派搭建流媒体服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/树莓派搭建流媒体服务器/" class="archive-article-date">
-  	<time datetime="2019-08-21T14:57:34.572Z" itemprop="datePublished">Aug 21</time>
+    <div class="article-meta">
+      <a href="/2019/08/21/树莓派搭建流媒体服务器/" class="article-date">
+  	<time datetime="2019-08-21T14:57:34.572Z" itemprop="datePublished">2019-08-21</time>
 </a>
-        </div>
-    	 
-        <div class="article-info info-on-left">
-          
-          
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#使用树莓派制作一个流(qie)媒(ting)<del>体服务</del>器</p>
+<p>[TOC]</p>
+<h4 id="材料准备"><a href="#材料准备" class="headerlink" title="材料准备"></a>材料准备</h4><h5 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h5><h6 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h6><p>1.树莓派Zero W</p>
+<p>2.ResSpeaker 2-Mics Pi HR </p>
+<h6 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h6><p>手机/平板/PC</p>
+<h5 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h5><h6 id="服务端-1"><a href="#服务端-1" class="headerlink" title="服务端"></a>服务端</h6><p>1.树莓派操作系统<a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">Raspbian</a></p>
+<p>2.声卡ResSpeaker 2-Mics Pi HR的<a href="https://github.com/respeaker/" target="_blank" rel="noopener">驱动</a></p>
+<p>3.中间件<a href="https://baike.baidu.com/item/nginx/3817705?fr=aladdin" target="_blank" rel="noopener">nginx</a></p>
+<p>4.nginx的rtmp模块<a href="https://github.com/arut/nginx-rtmp-module/" target="_blank" rel="noopener">nginx-rtmp-module</a></p>
+<p>5.音视频采集器<a href="http://ffmpeg.org" target="_blank" rel="noopener">ffmpeg</a></p>
+<p>6.反向代理和端口转发工具<a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">frp</a></p>
+<p>———–未完testblog待续—————-</p>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/hello-world/" class="archive-article-date">
-  	<time datetime="2019-08-21T07:43:10.343Z" itemprop="datePublished">Aug 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/hello-world/">
-        Hello World
-        
-      </a>
-    </h1>
-  
 
-        <div class="article-info info-on-left">
-          
-          
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+<div class="ds-share share" data-thread-key="树莓派搭建流媒体服务器" data-title="" data-url="https://ostrichsec.github.io/2019/08/21/树莓派搭建流媒体服务器/"  data-images="/img/head.png" data-content="">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
 
-    
+
+
+
 
 </div>
       <footer id="footer">
@@ -290,8 +288,8 @@
 		mathjax: true,
 		animate: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
