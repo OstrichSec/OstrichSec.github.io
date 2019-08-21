@@ -24,11 +24,39 @@
     <link rel="alternative" href="/atom.xml" title="Ostrich&#39;s Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
+    <link rel="icon" href="/images/header.png">
   
   <link rel="stylesheet" href="/css/style.css">
   
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
   
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85415703-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
   <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
@@ -44,7 +72,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+			<img src="/images/header.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 		</a>
 
@@ -53,7 +81,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle">Good imagination is a sign of great intelligence</p>
+		<p class="header-subtitle">你好 兄dei</p>
 		
 
 		
@@ -143,13 +171,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
+				<img lazy-src="/images/header.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">Ostrich</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">Good imagination is a sign of great intelligence</p>
+			<p class="header-subtitle">你好 兄dei</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -228,7 +256,7 @@
 </article>
 
 
-<div class="ds-share share" data-thread-key="hello-world" data-title="Hello World" data-url="https://ostrichsec.github.io/2019/08/21/hello-world/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="Hello World">
+<div class="ds-share share" data-thread-key="hello-world" data-title="Hello World" data-url="https://ostrichsec.github.io/2019/08/21/hello-world/"  data-images="/images/header.png" data-content="Hello World">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">
       	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
@@ -269,7 +297,7 @@
 	var yiliaConfig = {
 		fancybox: true,
 		mathjax: true,
-		animate: true,
+		animate: false,
 		isHome: false,
 		isPost: true,
 		isArchive: false,
